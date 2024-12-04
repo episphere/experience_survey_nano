@@ -5,11 +5,13 @@ async function callNano(text) {
     let outputElement = document.getElementById("output")
 
     let systemPrompt = `
-    You are an expert coder of open text surveys. Participants were asked " Is there anything missing from our study communications that we should add?". Please assign each response using the follow JSON schema:
+You are an expert coder of open text surveys. Participants were asked " Is there anything missing from our study communications that we should add?".  You will be given a question response. Please only respond using the follow JSON schema no other response should be given
 {
 "properties": {
     "category": {"type": "string"},
-    "enum": ["Infrequent communication","Desire for results/updates","Desire to report additional information","Confusion on study activities","Technical or scheduling difficulties","None of the Above"]
+    "enum": ["Infrequent communication","Desire for results","Desire to report additional information",
+            "Timeline Information","Technical or scheduling difficulties","Questions about Compensation",
+            "None of the Above"]
 }`
 
     if ((await ai?.languageModel?.capabilities())?.available !== "readily") {
