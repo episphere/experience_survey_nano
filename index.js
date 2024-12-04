@@ -26,13 +26,21 @@ You are an expert coder of open text surveys. Participants were asked " Is there
         systemPrompt: systemPrompt
     });
 
-    const stream = await session.promptStreaming(text);
+    let table = document.getElementById("output_table")
+    let row = table.insertRow();
+    let cell1 = row.insertCell();
+    cell1.innerText = text;
 
-    let childElement = document.createElement("div");
-    outputElement.insertAdjacentHTML("beforeend", `<h5>${text}</h5>`)
-    outputElement.insertAdjacentElement("beforeend", childElement)
-    for await (const part of stream) {
-        childElement.textContent = part;
+
+    const res = await session.prompt(text);
+    try {
+        let x = JSON.parse(res)
+        let cell2 = row.insertCell();
+        cell2.innerText = x.properties.category;
+    } catch (error) {
+        console.error(error)
+        let cell2 = row.insertCell();
+        cell2.innerText = res;
     }
 
 }
