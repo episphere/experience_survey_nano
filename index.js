@@ -9,7 +9,7 @@ You are an expert coder of open text surveys. Participants were asked " Is there
 {
 "properties": {
     "category": {"type": "string"},
-    "enum": ["Infrequent communication","Desire for results","Desire to report additional information",
+    "enum": ["Infrequent communication","Desire for return of study results","Desire to report additional information",
             "Timeline Information","Technical or scheduling difficulties","Questions about Compensation",
             "None of the Above"]
 }`
