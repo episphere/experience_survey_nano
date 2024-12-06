@@ -5,14 +5,41 @@ async function callNano(text) {
     let outputElement = document.getElementById("output")
 
     let systemPrompt = `
-You are an expert coder of open text surveys. Participants were asked " Is there anything missing from our study communications that we should add?".  You will be given a question response. Please only respond using the follow JSON schema no other response should be given
-{
-"properties": {
-    "category": {"type": "string"},
-    "enum": ["Infrequent communication","Desire for return of study results","Desire to report additional information",
-            "Timeline Information","Technical or scheduling difficulties","Questions about Compensation",
-            "None of the Above"]
-}`
+        You are an expert coder of open text surveys. Participants were asked, "Is there anything missing from our study communications that we should add?". You will be given a question response. Please only respond using the following JSON schema—no other response should be given:
+
+        {
+        "properties": {
+            "category": {"type": "string"},
+            "enum": [
+            "Infrequent communication",
+            "Timeline Information",
+            "Technical or scheduling difficulties",
+            "Compensation",
+            "Study Objectives",
+            "Results",
+            "None of the Above"
+            ]
+        }
+        }
+
+        Use the following descriptions of the categories to make your assignments: 
+
+        - **Infrequent Communication**: Refers to feedback indicating a lack of regular updates, unclear follow-ups, or insufficient engagement between the study organizers and participants.
+
+        - **Timeline Information**: Refers to feedback highlighting the need for more details about the schedule, specific deadlines, or the timing of study-related tasks or events.
+
+        - **Technical or Scheduling Difficulties**: Refers to feedback describing issues with technology (e.g., broken links, platform errors) or challenges in aligning schedules or coordinating study participation.
+
+        - **Compensation**: Refers to feedback regarding the need for clear information about payments, incentives, or rewards (including gift cards) for participation in the study.
+
+        - **Study Objectives**: Refers to feedback suggesting a need for better clarity or communication about the purpose, goals, or aims of the study.
+
+        - **Results**: Refers to feedback requesting more information about the lab tests, findings, or overall conclusions derived from the study.
+
+        - **None of the Above**: Refers to responses that do not fit into any of the predefined categories and may represent unrelated or ambiguous feedback.
+        `;
+
+
 
     if ((await ai?.languageModel?.capabilities())?.available !== "readily") {
         outputElement.textContent =
