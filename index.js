@@ -11,9 +11,10 @@ async function callNano(text) {
         "properties": {
             "category": {"type": "string"},
             "enum": [
-            "Infrequent communication",
+            "Communication",
             "Timeline Information",
-            "Technical or scheduling difficulties",
+            "Technical",
+            "Scheduling",
             "Compensation",
             "Study Objectives",
             "Results",
@@ -24,17 +25,19 @@ async function callNano(text) {
 
         Use the following descriptions of the categories to make your assignments: 
 
-        - **Infrequent Communication**: Refers to feedback indicating a lack of regular updates, unclear follow-ups, or insufficient engagement between the study organizers and participants.
+        - **Communication**: Refers to feedback about the frequency of communication.
 
-        - **Timeline Information**: Refers to feedback highlighting the need for more details about the schedule, specific deadlines, or the timing of study-related tasks or events.
+        - **Timeline Information**: Refers to feedback about specific deadlines, or the timing of study-related tasks or events.
 
-        - **Technical or Scheduling Difficulties**: Refers to feedback describing issues with technology (e.g., broken links, platform errors) or challenges in aligning schedules or coordinating study participation.
+        - **Technical**: Refers to feedback about technology (e.g., broken links, platform errors).
 
-        - **Compensation**: Refers to feedback regarding the need for clear information about payments, incentives, or rewards (including gift cards) for participation in the study.
+        - **Scheduling**: Feedback about aligning schedules or coordinating study participation.
 
-        - **Study Objectives**: Refers to feedback suggesting a need for better clarity or communication about the purpose, goals, or aims of the study.
+        - **Compensation**: Feedback about payments, incentives, or rewards (including gift cards) for participation in the study.
 
-        - **Results**: Refers to feedback requesting more information about the lab tests, findings, or overall conclusions derived from the study.
+        - **Study Objectives**: Feedback about the purpose, goals, or aims of the study.
+
+        - **Results**: Feedback about the lab tests, findings, or overall conclusions derived from the study.
 
         - **None of the Above**: Refers to responses that do not fit into any of the predefined categories and may represent unrelated or ambiguous feedback.
         `;
