@@ -11,12 +11,13 @@ async function callNano(text) {
         "properties": {
             "category": {"type": "string"},
             "enum": [
-            "Communication",
+            "Communication Frequency",
+            "Communication Content",
             "Timeline Information",
             "Technical",
             "Scheduling",
             "Compensation",
-            "Study Objectives",
+            "Study Objectives & Progress",
             "Results",
             "None of the Above"
             ]
@@ -25,7 +26,9 @@ async function callNano(text) {
 
         Use the following descriptions of the categories to make your assignments: 
 
-        - **Communication**: Refers to feedback about the frequency of communication.
+        - **Communication Frequency**: Refers to feedback about the frequency of communication.
+
+        - **Communication Content**: Refers to feedback about the content of communication, including confusing messages and requests for general scientific information not directly pertaining to the study.
 
         - **Timeline Information**: Refers to feedback about specific deadlines, or the timing of study-related tasks or events.
 
@@ -35,9 +38,9 @@ async function callNano(text) {
 
         - **Compensation**: Feedback about payments, incentives, or rewards (including gift cards) for participation in the study.
 
-        - **Study Objectives**: Feedback about the purpose, goals, or aims of the study.
+        - **Study Objectives & Progress**: Feedback or questions about the purpose, goals, overall findings, or progress of the study.
 
-        - **Results**: Feedback about the lab tests, findings, or overall conclusions derived from the study.
+        - **Results**: Feedback about the individual lab tests or findings derived from the study.
 
         - **None of the Above**: Refers to responses that do not fit into any of the predefined categories and may represent unrelated or ambiguous feedback.
         `;
